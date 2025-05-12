@@ -3580,3 +3580,19 @@ html.no-csstransitions .hero-content {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+/* Checklist */
+
+.checklist {
+  list-style:none;
+  padding-left: 1.5em;
+}
+
+.checklist li::before {
+    content: "✦";
+    color: #4e4e4e; /* Pas eventueel aan naar je gewenste kleur */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.5em;
+    margin-right: 0.5em;
+}

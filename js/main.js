@@ -133,6 +133,19 @@
         });
     };
 
+   /* Checklist 
+    * ------------------------------------------------------ */
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const checklistItems = document.querySelectorAll(".checklist li");
+
+        checklistItems.forEach(item => {
+            item.addEventListener("click", function () {
+                item.classList.toggle("checked");
+            });
+        });
+    });
+
 
    /* Initialize
     * ------------------------------------------------------ */
