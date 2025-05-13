@@ -3597,6 +3597,42 @@ html.no-csstransitions .hero-content {
     margin-right: 0.5em;
 }
 
+.checklist li p.subtext {
+  margin: 6px 0 0;
+  font-size: 1rem;        /* Maak groter */
+  font-style: italic;     /* Schuingedrukt */
+  color: #ccc;            /* Of gebruik #999 voor iets donkerder */
+  line-height: 1.5;
+}
+
+.tips-list {
+    list-style: none; /* verwijdert standaard bullets en icons */
+    padding: 0;
+    margin: 0;
+}
+
+.tip-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tip-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.4rem;
+}
+
+.tip-description {
+    font-size: 1rem;
+    font-style: italic;
+    color: #ccc;
+    margin: 0;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -3614,3 +3650,4 @@ html.no-csstransitions .hero-content {
 .gallery-item img:hover {
     transform: scale(1.05);
 }
+
