@@ -3398,6 +3398,10 @@ html.no-csstransitions .hero-content {
   background-image: url(../images/header-bgs/volunteer-header-bg-2000.jpg);
 }
 
+.page-header--survival {
+  background-image: url(../images/header-bgs/survival-header-bg-2000.jpg)
+}
+
 .page-header__content {
   position: relative;
 }
