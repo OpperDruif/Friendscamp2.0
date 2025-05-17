@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniReddit Forum</title>
+  <style>
+    :root {
+      --bg-color: #1a1a1b;
+      --post-bg: #272729;
+      --border-color: #343536;
+      --accent-color: #ff4500;
+      --vote-bg: #1a1a1b;
+      --text-color: #d7dadc;
+      --meta-color: #818384;
+      --sidebar-bg: #1c1c1e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #1a1a1b;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .header-left h1 {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+    }
+
+    .header-center {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .search-bar {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      background-color: #2c2c2d;
+      color: var(--text-color);
+      font-size: 0.9rem;
+    }
+
+    .page {
+      display: flex;
+      flex: 1;
+    }
+
+    .left-sidebar {
+      width: 200px;
+      background-color: #1a1a1b;
+      padding: 1rem;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .left-sidebar button {
+      width: 100%;
+      background-color: #1a1a1b;
+      color: var(--text-color);
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .left-sidebar button:hover {
+      background-color: #3a3a3c;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto;
+      gap: 2rem;
+      max-width: 1200px;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .container {
+      flex: 3;
+    }
+
+    .post {
+      display: flex;
+      background-color: var(--post-bg);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .post:hover {
+      transform: scale(1.01);
+    }
+
+    .vote {
+      background-color: var(--vote-bg);
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 0;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .vote button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--meta-color);
+    }
+
+    .vote span {
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 1rem;
+    }
+
+    .content h2 {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      margin-bottom: 0.3rem;
+    }
+
+    .content p {
+      color: var(--text-color);
+      font-size: 0.95rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--meta-color);
+      margin-top: 0.6rem;
+    }
+
+    .subreddit {
+      font-weight: bold;
+      color: #79b8f3;
+      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        flex-direction: column;
+      }
+      .left-sidebar {
+        order: -1;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .left-sidebar button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-logo">
+      <a class="site-logo" href="Forum.html">
+        <img src="images/logo1.png" alt="Homepage">
+      </a>
+    </div>
+    <div class="header-center">
+      <div class="search-bar">
+        <input type="text" placeholder="Zoek een post, subreddit of gebruiker..." />
+      </div>
+    </div>
+    <div class="header-right">
+      <button>Plaats iets</button>
+    </div>
+  </header>
+
+  <div class="page">
+    <nav class="left-sidebar">
+      <button>🏠 Home</button>
+      <button>🔥 Popular</button>
+      <button>🆕 Nieuw</button>
+    </nav>
+
+    <main class="main">
+      <div class="container">
+        <div class="post">
+          <div class="vote">
+            <button>⬆️</button>
+            <span>341</span>
+            <button>⬇️</button>
+          </div>
+          <div class="content">
+            <div class="subreddit">r/webdesign</div>
+            <h2>Deze Reddit-kloon wordt steeds beter</h2>
+            <p>Ik heb een statisch forum geüpgraded naar een responsieve en visueel aantrekkelijke layout. Feedback welkom!</p>
+            <div class="meta">Geplaatst door u/coder123 • 3 uur geleden</div>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="vote">
+            <button>⬆️</button>
+            <span>120</span>
+            <button>⬇️</button>
+          </div>
+          <div class="content">
+            <div class="subreddit">r/programmeren</div>
+            <h2>Wat is jouw favoriete code editor?</h2>
+            <p>VS Code, Sublime, JetBrains of iets totaal anders? Deel je voorkeuren en tips!</p>
+            <div class="meta">Geplaatst door u/devgal • 5 uur geleden</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
